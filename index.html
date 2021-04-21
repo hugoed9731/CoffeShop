@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffe in your life</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="assets/styles/normalize.css">
+</head>
+<!-- ----- SCROLL TOP ----- -->
+
+<body>
+    <header class="hero">
+        <nav id="navbar">
+            <section class="nav">
+                <div class="hero_logo">
+                    <a><img src="assets/images/coffe.png" alt="coffeInYourLife"></a>
+                </div>
+
+                <button class="switch" id="switch">
+					<span><i class="fas fa-sun"></i></span>
+					<span><i class="fas fa-moon"></i></span>
+					<!-- destaca algo pero en tipo linea dentro del código -->
+				</button>
+                <!-- activado -->
+                <div class="nav__links activado" id="navLinks">
+                    <a href="#menu" class="nav__items">Menu</a>
+                    <a href="#aboutUs" class="nav__items">About us</a>
+                    <a href="#marks" class="nav__items">Marks</a>
+                    <a href="#contact" class="nav__items">Contac</a>
+                </div>
+
+                <div class="icono-menu">
+                    <i class="fas fa-bars open" id="open"></i>
+                     <!-- <i class="fas fa-times close" id="close"></i> -->
+                </div>
+        </nav>
+        </section>
+
+        <section class="hero-container">
+            <div class="hero__texts">
+                <h1 class="hero__title">
+                    Dreams on coffe
+                </h1>
+                <h2 class="hero__subtitule">
+                    ¡Enjoy the best coffe!
+                </h2>
+            </div>
+        </section>
+
+        <div class="hero_wave" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path class="cambioTema" d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #f2f2f2;"></path>
+            </svg>
+        </div>
+
+    </header>
+
+
+    <main>
+        <section class="galery" id="menu">
+            <div class="container">
+                <h2>Menu</h2>
+                <div class="gallery__grid">
+                    <article class="galery__item">
+                        <img src="assets/images/1.jpg" alt="" class="galery__img">
+                        <div class="galery_cover">
+                            <h2 class="kindCoffe">Expresso</h2>
+                            <i class="fas fa-mug-hot projects__icon"></i>
+                        </div>
+                    </article>
+
+                    <article class="galery__item">
+                        <img src="assets/images/2.jpg" alt="" class="galery__img">
+                        <div class="galery_cover">
+                            <h2 class="kindCoffe">Latte</h2>
+                            <i class="fas fa-mug-hot projects__icon"></i>
+                        </div>
+                    </article>
+
+                    <article class="galery__item">
+                        <img src="assets/images/3.jpg" alt="" class="galery__img">
+                        <div class="galery_cover">
+                            <h2 class="kindCoffe">Cappucino</h2>
+                            <i class="fas fa-mug-hot projects__icon"></i>
+                        </div>
+                    </article>
+
+                    <article class="galery__item">
+                        <img src="assets/images/4.jpg" alt="" class="galery__img">
+                        <div class="galery_cover">
+                            <h2 class="kindCoffe">Americano</h2>
+                            <i class="fas fa-mug-hot projects__icon"></i>
+                        </div>
+                    </article>
+
+                    <article class="galery__item">
+                        <img src="assets/images/5.jpg" alt="" class="galery__img">
+                        <div class="galery_cover">
+                            <h2 class="kindCoffe">Moka</h2>
+                            <i class="fas fa-mug-hot projects__icon"></i>
+                        </div>
+                    </article>
+
+                    <article class="galery__item">
+                        <img src="assets/images/6.jpg" alt="" class="galery__img">
+                        <div class="galery_cover">
+                            <h2 class="kindCoffe">Irlandés</h2>
+                            <i class="fas fa-mug-hot projects__icon"></i>
+                        </div>
+                    </article>
+
+                    <article class="galery__item">
+                        <img src="assets/images/7.jpg" alt="" class="galery__img">
+                        <div class="galery_cover">
+                            <h2 class="kindCoffe">Dobble</h2>
+                            <i class="fas fa-mug-hot projects__icon"></i>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- GALERIA EMEGENTE -->
+            <div class="overlayGalery" id="overlayGalery">
+                <div class="galeria-popup" id="galeria-popup">
+                    <a id="cerrar" class="cerrar"><i class="fas fa-times"></i></a>
+                    <div class="emergentTexts">
+                        <div class="coffeText" id="coffeText">
+                        <h2 class="description"></h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, asperiores? 
+                            Doloribus aliquam quidem in quis labore ipsam rerum ea maxime!</p>
+                        </div>
+                        
+                        <article class="precios" id="precios">
+                            <h3>Precios</h3>
+                          <table class="table">
+                              <tr>
+                                    <th>Chico</th>
+                                    <th>Mediano</th>
+                                    <th>Grande</th>
+                                    <th>Alto</th>
+                              </tr>
+                              <tr>
+                                <td>20$</td>
+                                <td>30$</td>
+                                <td>40$</td>
+                                <td>50$</td>
+                              </tr>
+                          </table>
+                        </article>
+                    </div>
+                    <img src="" alt="">
+                </div>
+            </div>
+
+        </section>
+<!-- lo que vamos a hacer es con js tomar la dirección de la imagen y ponerla aquí en el src -->
+        
+
+        <section class="aboutUs container" id="aboutUs">
+            <div class="aboutUs__content">
+                <h2 class="aboutUs__title">
+                    Who are we?
+                </h2>
+                <i class="fas fa-arrow-circle-down" id="flechaAbajo"></i>
+                <i class="fas fa-arrow-circle-up" id="flechaArriba"></i>
+            </div>
+
+            <div class="aboutUs__description" id="aboutUs__description">
+                <div class="aboutUs__item">
+                    <figure class=".about__img">
+                        <img src="assets/images/aboutUs.svg" alt="coffeDream" class="aboutUs__img">
+                    </figure>
+                </div>
+
+                <div class="aboutUs__item2">
+                    <article>
+                        <p class="aboutUs__story">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, dolorem. Repudiandae blanditiis at iste, rerum reiciendis qui dignissimos tempore illum. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt impedit
+                            corrupti ex molestiae saepe accusantium provident porro quae eaque libero.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="theCrew">
+            <div class="theCrew__text">
+                <h2 class="theCrew__title">
+                    Our team
+                </h2>
+            </div>
+            <div class="theCrew__content">
+                <div class="member">
+                    <div>
+                        <img src="assets/images/team/1.jpg" alt="chef" class="worker">
+                        <div class="member__items">
+                            <h2>lorem</h2>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, repellat?</p>
+                            <div class="socialmedia__crew">
+                                <a href=""><i class="fab fa-facebook"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member">
+                    <div>
+                        <img src="assets/images/team/2.jpg" alt="cashier" class="worker">
+                        <div class="member__items">
+                            <h2>lorem</h2>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, repellat?</p>
+                            <div class="socialmedia__crew">
+                                <a href=""><i class="fab fa-facebook"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member">
+                    <div>
+                        <img src="assets/images/team/3.jpg" alt="barman" class="worker">
+                        <div class="member__items">
+                            <h2>lorem</h2>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, repellat?</p>
+                            <div class="socialmedia__crew">
+                                <a href=""><i class="fab fa-facebook"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member">
+                    <div>
+                        <img src="assets/images/team/4.jpg" alt="waitress" class="worker">
+                        <div class="member__items">
+                            <h2>lorem</h2>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, repellat?</p>
+                            <div class="socialmedia__crew">
+                                <a href=""><i class="fab fa-facebook"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  -->
+                <div class="member">
+                    <div>
+                        <img src="assets/images/team/1.jpg" alt="chef" class="worker">
+                        <div class="member__items">
+                            <h2>lorem</h2>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, repellat?</p>
+                            <div class="socialmedia__crew">
+                                <a href=""><i class="fab fa-facebook"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="coffeMarks" id="marks">
+            <h2 class="coffeMark__titulo">This marks of coffe works with us</h2>
+
+            <div class="coffes">
+                <div class="coffeCollaborator">
+                    <img src="assets/images/coffesMarks/nescafe.jpg" alt="Nescafe">
+                    <article class="coffe_article">
+                        <h3 class="coffeCompany">Nescafe</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur architecto sed error eaque nisi laboriosam!</p>
+                        <a href="#">Know more</a>
+                    </article>
+                </div>
+
+                <div class="coffeCollaborator">
+                    <img src="assets/images/coffesMarks/starbucks.png" alt="starbucks">
+                    <article class="coffe_article">
+                        <h3 class="coffeCompany">Starbucks</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur architecto sed error eaque nisi laboriosam!</p>
+                        <a href="#">Know more</a>
+                    </article>
+                </div>
+
+                <div class="coffeCollaborator">
+                    <img src="assets/images/coffesMarks/timHortons.png" alt="Tim Hortons">
+                    <article class="coffe_article">
+                        <h3 class="coffeCompany">Tim Hortons</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur architecto sed error eaque nisi laboriosam!</p>
+                        <a href="#">Know more</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="location" id="contact">
+            <h2 class="location_title">Location</h2>
+
+            <div class="locationContainer">
+                <div class="location__map">
+                    <a href=""><img class="locationImg" href="https://www.google.com.mx/maps/preview" src="./assets/images/location.jpg" alt="locacion"></a>
+                    <!-- i have to find out about how to put a map from google -->
+                </div>
+                <div class="location__items">
+
+                    <a href="#" class="location__map--a">
+                        <h4><i class="fas fa-map-marker-alt caca"></i>Leon</h4>
+                    </a>
+
+
+                    <a href="#" class="location__map--a">
+                        <h4><i class="fas fa-map-marker-alt caca"></i>CDMX</h4>
+                    </a>
+
+
+                    <a href="#" class="location__map--a">
+                        <h4><i class="fas fa-map-marker-alt caca"></i>Coahuila</h4>
+                    </a>
+
+
+                    <a href="#" class="location__map--a">
+                        <h4><i class="fas fa-map-marker-alt caca"></i>Puebla</h4>
+                    </a>
+
+                    <a href="#" class="location__map--a">
+                        <h4><i class="fas fa-map-marker-alt caca"></i>Querétaro</h4>
+                    </a>
+
+
+                </div>
+            </div>
+
+            <div class="contactUs">
+                <div class="contactUs__button">
+                    <button id="btn-abrir-popup" class="btn-abrir-popup">Contact Us</button>
+                </div>
+
+                <div class="overlay" id="overlay">
+                    <div class="popup" id="popup">
+                        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                        <h3>CONTACT US</h3>
+                        <h4>Send us a message and discover all our coffes</h4>
+                        <form action="">
+                            <div class="contenedor-inputs">
+                                <input type="text" placeholder="Nombre">
+                                <input type="text" placeholder="Correo">
+                            </div>
+                            <input type="submit" class="btn-submit" value="Enviar">
+                        </form>
+                    </div>
+                </div>
+                <div class="socialMedia">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="boton">
+                <div class="go-top-container">
+                    <div class="go-top-button">
+                        <i class="fa fa-chevron-up"></i>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__grid">
+            <div class="footer__logo">
+                <a href=""><img src="assets/images/coffe.png" alt=""></a>
+            </div>
+
+            <div class="dreamCoffe">
+                <h2>Dream on coffe</h2>
+            </div>
+
+            <div class="phone">
+               <a href="tel:5532321454">Tel:5532321454</a> 
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/671d078bed.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/emergent.js"></script>
+</body>
+
+</html>

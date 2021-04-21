@@ -1,0 +1,1537 @@
+            /* ----- fonts ----- */
+            
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap');
+            /* ----- variables ----- */
+            
+             :root {
+                /* ----- colors -----*/
+                --black-color: #000000;
+                --gray-color: #a6a685;
+                --brown-color: #c89a58;
+                --brown-color2: #a98c66;
+                /* ----- buttons ------- */
+                --button-color: #a6a685;
+                --buton-colorSe: #a6a685;
+            }
+            /* ----- variables theme ----- */
+            /* ----- BASE ----- */
+            
+            html {
+                scroll-behavior: smooth;
+            }
+            /* better transition when we scroll on the website */
+            
+            .container {
+                width: 95%;
+                max-width: 1000px;
+                margin: auto;
+                overflow: hidden;
+                padding: 60px 0;
+            }
+            
+            *,
+             ::before,
+             ::after {
+                box-sizing: border-box;
+                /* content: ""; */
+                /* display: block; */
+            }
+            
+            body {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 12px;
+                background: #ffffff
+            }
+            .body.dark{
+                background: #111111;
+            }
+            /* HEADER */
+            
+            header::before {
+                content: "";
+                display: block;
+                margin-bottom: 80px;
+            }
+            
+            nav {
+                width: 100%;
+                height: 80px;
+                background: #fff;
+                border-bottom: 1px solid transparent;
+                box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .2);
+                /* box-shadow: hace la sombra en la parte de abajo */
+                position: fixed;
+                /* fixed - hace que el menu se quede pegado */
+                top: 0;
+                left: 0;
+                z-index: 100;
+                /* z-index para que sobrepase las demas cosas, sea la capa principal */
+                /* z-index posiciona los elementos, en este caso es no posicionado */
+                transition: ease-in-out 0.5s;
+            }
+            
+            .nav {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                height: 80px;
+                width: 100%;
+                align-items: center;
+                /* centrarlos verticalmente */
+                padding: 0 40px;
+            }
+
+            body.dark nav {
+                background: #222222;
+                -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+                        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+                border-bottom: 1px solid #a4a4a4;
+              }
+            
+              body.dark nav a {
+                color: #C8C8C8;
+              }
+              
+              body.dark nav a:hover {
+                color: #FEFEFE;
+              }
+              
+            .nav__links {
+                transition: ease-in-out 0.5s;
+                /* esta transicion trabaja junto al js */
+               /*  margin-left: -100px; */
+               
+            }
+            
+            .nav__links a {
+                text-decoration: none;
+                margin: 0px 20px 0 20px;
+                color: #535353;
+                transition: all ease-in-out .3s;
+                /* ease-in-out -  inicia rapido y luego se pinta lento */
+            }
+            
+            .nav__links a:hover {
+                color: var(--black-color);
+            }
+
+            /* menu hambuerguesa */
+          
+            .icono-menu {
+                display: none;
+            }
+          
+            .fas.fa-bars.open{
+                margin: 0px;
+                position: relative;
+                z-index: 10;
+                cursor: pointer;
+            }
+           
+            body.dark .fas.fa-bars.open{
+                color: #fff;
+            }
+            /* tema FALTA CAMBIAR EL COLOR DEL TEMA */
+            
+            .switch {
+                background: #343D5B;
+                border-radius: 1000px;
+                border: none;
+                position: relative;
+                /* este posición relative es importante para cuando agregamos la bolita del boton */
+                cursor: pointer;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                outline: none;
+                justify-content: center;
+                align-content: center;
+                margin-left: 180px;
+                /* quitamos un borde que en google chrome le agrega */
+                /* utlizaremos after para sobreescribir, i mean poner el boton arriba */
+                /* cuando nuestro switch tenga clase active */
+            }
+            .switch::after {
+                content: "";
+                display: block;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                background: #F1F1F1;
+                top: 0;
+                left: 0;
+                right: unset;
+                /* UNSET LA PARTE IZQUIERDA NO VA ESTAR ACTIVA, PERO LA DERECHA SI */
+                border-radius: 100px;
+                -webkit-transition: .3s ease all;
+                transition: .3s ease all;
+                -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+                        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+                /* este after se agrega al switch */
+                /* se usa junto con los pseudo-elementos :before y :after para generar contenido que se adjunta antes o después de un selector CSS. */
+              }
+              .switch.act {
+                background: orange;
+                color: #000;
+                /* cuando tenga la clase de active queremos acceder a la clase de after */
+              }
+              
+              .switch.act::after {
+                right: 0;
+                left: unset;
+              }
+              
+              .switch span {
+                /* el span dentro del nuestro switch */
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                /* Es el espacio entre las líneas de arriba con la de abajo */
+                display: block;
+                background: none;
+                color: #fff;
+              }
+              
+            
+           /* LOGO */
+            
+            .hero_logo {
+                height: 80px;
+                text-align: center;
+            }
+            
+            .hero_logo img {
+                height: 100%;
+                vertical-align: top;
+                /* especifica el alineado 
+    vertical de un elemento en línea o una celda de una tabla. */
+            }
+            
+            .hero-container {
+                height: 100vh;
+                background-color: #ffeaa7;
+                background-image: linear-gradient(315deg, #ffeaa7 0%, #000000 74%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+
+            body.dark .hero-container {
+             background:linear-gradient(#e66465, #9198e5);
+              }
+
+              body.dark .hero__texts h1:first-child{
+                border: 1px solid #000000;
+              }
+              body.dark h1:hover{
+                background-color:  rgba(0, 0, 0, .5);
+              }
+            
+            .hero__texts {
+                width: 500px;
+                height: 300px;
+                text-align: center;
+                padding: 10px 0 60px 0;
+            }
+            
+            .hero__texts h1:first-child {
+                font-size: 60px;
+                font-weight: 300;
+                color: #fff;
+                border: 1px solid #a6a685;
+                margin: 20px 20px 20px 20px;
+                transition: all ease-in-out .3s;
+            }
+            
+            .hero__texts h1:hover {
+                background-color: var(--brown-color);
+            }
+            
+            .hero__texts h2 {
+                color: white;
+                font-weight: 300;
+            }
+            
+            .hero_wave {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                transform: translateY(81px)
+            }
+            /* ------ */
+            /* GALLERY */
+            
+            .galery {
+                background: #f2f2f2;
+            }
+            
+            .gallery__grid {
+                display: grid;
+                height: 1000px;
+                grid-template-areas: "img2 img2 img6 img6 img3 img3" 
+                                     "img2 img2 img6 img6 img3 img3" 
+                                     "img1 img1 img4 img4 img3 img3" 
+                                     "img1 img1 img4 img4 img7 img7" 
+                                     "img1 img1 img5 img5 img7 img7"
+                                    "img1 img1 img5 img5 img7 img7";
+                /* con esto declaramos dos filas con 4 columnas cada fila */
+                grid-gap: 10px;
+                /* 10px de espacio entre filas y columnas */
+            }
+            
+            .galery__item {
+                position: relative;
+                /* relative para hacer un efecto mas adelante sobre las imagenes */
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                /* todo lo que se salga de la caja lo oculta */
+                /* es importante colocarlo para que funcionen el hover con logo */
+            }
+            
+            .galery__img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                cursor: pointer;
+            }
+            /* It's moment to use pseudoclares */
+            
+            .galery__item:nth-of-type(1) {
+                /* al primer elemento que encuentre
+         del mismo tipo le va a dar las siguientes propiedades */
+                grid-area: img1;
+                box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+                border-radius: 1%;
+            }
+            
+            .galery__item:nth-of-type(2) {
+                /* al primer elemento que encuentre
+         del mismo tipo le va a dar las siguientes propiedades */
+                grid-area: img2;
+                box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+                border-radius: 1%;
+            }
+            
+            .galery__item:nth-of-type(3) {
+                /* al primer elemento que encuentre
+         del mismo tipo le va a dar las siguientes propiedades */
+                grid-area: img3;
+                box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+                border-radius: 1%;
+            }
+            
+            .galery__item:nth-of-type(4) {
+                /* al primer elemento que encuentre
+         del mismo tipo le va a dar las siguientes propiedades */
+                grid-area: img4;
+                box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+                border-radius: 1%;
+            }
+            
+            .galery__item:nth-of-type(5) {
+                /* al primer elemento que encuentre
+         del mismo tipo le va a dar las siguientes propiedades */
+                grid-area: img5;
+                box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+                border-radius: 1%;
+            }
+            
+            .galery__item:nth-of-type(6) {
+                /* al primer elemento que encuentre
+         del mismo tipo le va a dar las siguientes propiedades */
+                grid-area: img6;
+                box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+                border-radius: 1%;
+            }
+            
+            .galery__item:nth-of-type(7) {
+                /* al primer elemento que encuentre
+         del mismo tipo le va a dar las siguientes propiedades */
+                grid-area: img7;
+                box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+                border-radius: 1%;
+            }
+            
+            .galery_cover {
+                position: absolute;
+                /* con esto lo sacamos de la pantalla */
+                background: rgba(0, 0, 0, .5);
+                /* como tenemos absolute podemos usar top,right */
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                color: #fff;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                transform: translateX(100%);
+                /* quiero mover en x este elemento en un 100% */
+                transition: transform .3s ease-in-out;
+                /* solamente a los elementos transform */
+            }
+            
+            .galery__item:hover .galery_cover {
+                /* cuando pasemos el raton por la caja, se veran los estilos de la caja .galery_cover */
+                transform: translateX(0%);
+                cursor: pointer;
+            }
+            
+            .projects__icon {
+                margin-top: 10px;
+                font-size: 30px;
+            }
+            /* Efect lighbox */
+            
+            .galery_information {
+                position: fixed;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                transform: translateX(100%);
+                /* para ya no ver la ventana emergente */
+                background: rgba(0, 0, 0, 0.7);
+                /*es el fondo que tiene el ligtbox*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* align centrar horizontalmente */
+                /* agregamos una transicion para que cuando se cierre con js no se vea tan brusco */
+                transition: transform .4s ease-in;
+            }
+            /* esta clase va con js quita el movimiento del translateX */
+            
+            .move {
+                transform: translateX(0);
+            }
+            
+            .img.show {
+                height: 80%;
+                transform: scale(0);
+                /* hemos escalado la imagen a 0 es decir que no va a aparecer */
+                display: block;
+                object-fit: cover;
+                transition: transform .2s .4s;
+            }
+            
+            .show {
+                transform: scale(1);
+            }
+            
+            .copy {
+                position: fixed;
+                color: #fff;
+                bottom: 40px;
+            }
+            
+            .bx.bx-x {
+                position: absolute;
+                color: #fff;
+                top: 20px;
+                right: 10px;
+                font-size: 40px;
+                cursor: pointer;
+            }
+            /* aqui finaliza el efecto ligtbox */
+            .aboutUs.container{
+                margin: 0px auto;
+                padding: 0;
+            }
+
+            body.dark main {
+                background: #222222;
+                color: #f2f2f2;
+            }
+            .aboutUs__content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 30px;
+            }
+            
+            .aboutUs__title {
+                /* background: yellow; */
+                text-align: center;
+                padding: 15px 0 0 0;
+                font-weight: 300;
+                font-size: 2rem;
+            }
+            
+            .fas.fa-arrow-circle-down {
+                font-size: 40px;
+                cursor: pointer;
+                color: var(--brown-color2);
+                transition: 0.2s ease-in;
+
+            }
+            .fas.fa-arrow-circle-down:hover {
+                font-size: 42px;
+                color: var(--black-color);
+            }
+            body.dark .fas.fa-arrow-circle-up:hover,
+            body.dark .fas.fa-arrow-circle-down:hover 
+            {
+                color: #f2f2f2;
+            }
+           
+            
+            .fas.fa-arrow-circle-up {
+                display: none;
+                font-size: 40px;
+                cursor: pointer;
+                color: var(--brown-color2);
+                transition: 0.2s ease-in;
+            }
+            
+            .fas.fa-arrow-circle-up:hover {
+                font-size: 42px;
+                color: var(--black-color);
+            }
+            
+            .aboutUs__description {
+                background-color: #ca7968;
+                border-radius: 30px;
+                box-shadow: 0px 0 6px 0 rgba(0, 0, 0, .5);
+                display: none;
+                transform: scale(0.7);
+                opacity: 0;
+                /* centramos todo tanto vertical y horizontalmente */
+            }
+            .aboutUs__description.aparece {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                justify-items: center;
+                align-items: center;
+                opacity: 1;
+             transform: scale(1);
+                
+            }
+            
+            .about__img {
+                text-align: center;
+            }
+            
+            .aboutUs__img {
+                max-width: 80%;
+            }
+            
+            .aboutUs__story {
+                margin-bottom: 20px;
+                line-height: 1.5;
+                /* espaciado entre los renglones */
+                font-weight: 300;
+                font-size: 1rem;
+                user-select: none;
+            }
+            /* Automatic slider our team */
+            
+            .theCrew {
+                width: 100%;
+                height: auto;
+                max-width: 1300px;
+                margin: auto;
+                overflow: hidden;
+                padding: 30px 0;
+            }
+            
+            .theCrew__text {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+            
+            .theCrew__title {
+                text-align: center;
+                align-items: center;
+                font-weight: 300;
+                font-size: 2rem;
+            }
+            
+            .theCrew__content {
+                width: 100%;
+                display: flex;
+                
+                /* con esto ponemos todos los elementos en horizontal
+                    todos los elementos los va a juntar */
+            }
+            
+            .member {
+                width: 50%;
+                height: 300px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                /* propiedad de flexbox con los hijos */
+                flex-shrink: 0;
+                /* la capacidad de encongerce - con esta propiedad ya tendriamos todo en una sola linea */
+            }
+            
+            .member>div {
+                background: #ECECEC;
+                box-shadow: 0 0 6px 0 rgba(0, 0, 0, .2);
+                width: 96%;
+                padding: 10px 0;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            body.dark  .member>div{
+                background-color:  rgba(0, 0, 0, .5);;
+            }
+            
+            .member div>img {
+                width: 150px;
+                height: 150px;
+                object-fit: fill;
+                border-radius: 100%;
+                border: 2px solid #fff;
+                /* object-fit: cover; */
+            }
+            
+            .member__items {
+                align-items: center;
+                text-align: center;
+                font-weight: 300;
+            }
+            
+            .socialmedia__crew {
+                width: 100px;
+                padding: 3px 0 3px 0;
+                margin: auto;
+                font-size: 20px;
+                text-align: center;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                align-content: center;
+            }
+            
+            .socialmedia__crew a:nth-child(1) {
+                display: block;
+                background: transparent;
+                color: #fff;
+                transition: .5s ease-in;
+            }
+            
+            .socialmedia__crew a:nth-child(1):hover {
+                color: #3b5998;
+            }
+            
+            .socialmedia__crew a:nth-child(2) {
+                display: block;
+                background: transparent;
+                color: #fff;
+                transition: .5s ease-in;
+            }
+            
+            .socialmedia__crew a:nth-child(2):hover {
+                color: #833ab4;
+            }
+            
+            .socialmedia__crew a:nth-child(3) {
+                display: block;
+                background: transparent;
+                color: #fff;
+                transition: .5s ease-in;
+            }
+            
+            .socialmedia__crew a:nth-child(3):hover {
+                color: #EE1D52;
+            }
+            /* Coffe marks */
+            
+            .coffeMarks {
+                width: 96%;
+                height: auto;
+                max-height: auto;
+                margin: auto;
+            }
+            
+            .coffeMark__titulo {
+                text-align: center;
+                margin-top: 20px;
+                padding: 40px 0px 10px 0;
+                align-items: center;
+                font-weight: 300;
+                font-size: 2rem;
+            }
+            
+            .coffes {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 30px;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+            
+            .coffeCollaborator {
+                width: 29%;
+                height: auto;
+                align-items: center;
+                background: #fff;
+                border: 1px solid #757575;
+                margin-bottom: 10px;
+                border-radius: 10px;
+                padding: 20px 30px 20px 30px;
+                transition: 0.5s;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                /* para que al pasar el mouse se vea la transicion */
+            }
+
+            body.dark   .coffeCollaborator {
+                background-color:  rgba(0, 0, 0, .5);
+                border: 1px solid #000;
+            }
+            
+            .coffeCollaborator:hover {
+                box-shadow: 0 4px 10px rgba(12, 29, 48, .26);
+            }
+            
+            .coffeCollaborator>img {
+                width: 70px;
+                height: 70px;
+                margin-top: 0px;
+                border-radius: 50%;
+                box-shadow: 0 8px 32px rgba(31, 222, 130, .46);
+                /* cambiar el box shadow a un tono cafe */
+                object-fit: cover;
+                object-position: center;
+                align-self: flex-start;
+            }
+            
+            .coffe_article>h3 {
+                font-weight: 700;
+                font-size: 1rem;
+                margin-top: 20px;
+            }
+            
+            .coffe_article>p {
+                font-weight: 300;
+                line-height: 23px;
+                text-align: justify;
+            }
+            
+            .coffe_article>a {
+                display: block;
+                text-align: center;
+                font-weight: 400;
+                text-decoration: none;
+                align-items: center;
+                /* background: #3b5998; */
+                margin-top: 30px;
+                transition: 0.5s;
+                color: #000000;
+            }
+            
+            .coffe_article>a:hover {
+                color: rgb(95, 62, 62);
+            }
+            /* LOCATION */
+            
+            .location {
+                width: 95%;
+                overflow: hidden;
+                margin: 20px auto 0px auto;
+            }
+            
+            .locationContainer {
+                margin-top: 0px;
+                padding-top: 0px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+            }
+            
+            .location_title {
+                text-align: center;
+                align-items: center;
+                font-weight: 300;
+                font-size: 2rem;
+            }
+            
+            .location__map a>img {
+                width: 800px;
+                border-radius: 10px;
+                cursor: pointer;
+                display: block;
+            }
+            
+            .location__items {
+                width: 300px;
+                text-align: center;
+                justify-content: center;
+                transition: 0.5s ease-in;
+            }
+            
+            .location__map--a {
+                padding: 10px;
+                margin: 10px 20px 10px 20px;
+                display: block;
+                background: transparent;
+                border: 1px solid var(--black-color);
+                border-radius: 10px;
+                text-decoration: none;
+                color: #000000;
+                transition: 0.5s ease-in;
+            }
+            body.dark  .location__map--a{
+                border: 1px solid #f2f2f2;
+                color: #f2f2f2;
+            }
+
+            body.dark  .location__map--a:hover{
+                background-color: #838383;
+                box-shadow: 0 4px 10px rgba(12, 29, 48, .26);
+            }
+            
+            .location__map--a:hover {
+                background-color: #f2f2f2;
+                box-shadow: 0 4px 10px rgba(12, 29, 48, .26);
+            }
+            
+            .caca {
+                margin-right: 10px;
+                color: #ff0202;
+            }
+            /* contactUs */
+            
+            .contactUs {
+                margin: auto;
+                width: 95%;
+                height: 180px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            
+            .contactUs__button a {
+                text-decoration: none;
+                font-size: 2rem;
+                font-weight: 300;
+                display: inline-block;
+                color: var(--black-color);
+                transition: .5s ease-in;
+            }
+            
+            .contactUs__button a:hover {
+                color: #ff0202;
+            }
+            
+            .socialMedia a {
+                display: inline-block;
+                padding: 15px;
+            }
+            
+            .socialMedia a>i {
+                font-size: 19px;
+            }
+
+            body.dark .socialMedia a>i {
+                color: #f2f2f2;
+            }
+            
+            .socialMedia a:nth-child(1) {
+                color: #000;
+                transition: .5s ease-out;
+                /* facebook */
+            }
+            
+            .socialMedia a:nth-child(2) {
+                color: #000;
+                transition: .5s ease-out;
+                /* instagram */
+            }
+            
+            .socialMedia a:nth-child(3) {
+                color: #000;
+                transition: .5s ease-out;
+                /* tiwitter */
+            }
+            
+            .socialMedia a:nth-child(4) {
+                color: #000;
+                transition: .5s ease-out;
+                /* youtube */
+            }
+            
+            .socialMedia a:nth-child(1):hover {
+                color: #3b5998;
+                /* facebook */
+            }
+            
+            .socialMedia a:nth-child(2):hover {
+                color: #125688;
+                /* instagram */
+            }
+            
+            .socialMedia a:nth-child(3):hover {
+                color: #55acee;
+                /* tiwitter */
+            }
+            
+            .socialMedia a:nth-child(4):hover {
+                color: #bb0000;
+                /* youtube */
+            }
+
+            /* footer */
+
+            footer{
+                
+                margin: auto;
+                margin-top: 0px;
+                width: 100%;
+                height: auto;
+                border-top: 1px solid #757575;
+                
+            }
+
+            body.dark footer{
+                background: #222222;
+                color: #f2f2f2;
+            }
+            
+            .footer__grid{
+                display: flex;
+                justify-content: space-evenly;
+                align-content: center;
+                flex-wrap: nowrap;
+                margin:auto;
+            }
+            
+            .footer__logo a > img{
+                border-radius: 100%;
+                width: 50px;
+                height: 50px;
+                transition: 800ms ease-in;
+            }
+            .footer__logo a > img:hover{
+                width: 60px;
+                height: 60px;
+            }
+
+            .dreamCoffe{
+                margin-left: 70px;
+            }
+           .phone > a{
+                display: block;
+                padding: 15px;
+                font-size: 15px;
+                text-decoration: none;
+                color: #000000;
+                transition: 1s ease-in-out;
+                
+            }
+
+           body.dark .phone > a {
+               color: #f2f2f2;
+           }
+
+            .phone > a:hover{
+                color: #bb0000;
+            }
+
+            body.dark .phone > a:hover{
+                color: #fff;
+            }
+
+/* ----- EXTRAS - VENTANAS EMERGENTES - FORMULARIO */
+          /* FORMULARIO EMERGENTE */
+          /* POPUP */
+          .overlay {
+              background: rgba(0,0,0,.5);
+              backdrop-filter: blur(10px);
+              position: fixed;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              visibility: hidden;
+          }
+
+          body.dark .overlay{
+              color: #000;
+          }
+
+          .overlay.active{
+              visibility: visible;
+              /* cuando se le agregue la clase active, el visible va a cambiar a visible */
+          }
+
+          .popup{
+              background: #f8f8f8;
+              box-shadow: 0px 0xp 5px 0px rgba(0, 0, 0, 0.3);
+              border-radius: 3px;
+              font-family: 'Montserrat', sans-serif;
+              padding: 20px;
+              text-align: center;
+              width: 600px;
+              transition: .2s ease all;
+              transform: scale(0.7);
+              /* transform - lo que hace es que le esta cambiando el tamaño a la ventana - cuando se muestre crecera conforme la animación */
+              opacity: 0;
+              
+              /* la ventana no se va a ver porque tiene una opacidad de 0 */
+          }
+
+         .popup .btn-cerrar-popup {
+             font-size: 16px;
+             line-height: 16px;
+             display: block;
+             text-align: right;
+             color: #BBBBBB;
+             backdrop-filter: blur(10px);
+             transition: .3s ease all;
+             /* funcion ease para todas las propiedades */
+         }
+
+         .popup .btn-cerrar-popup:hover {
+            color: #000;
+         }
+
+         .popup h3{
+             font-size: 36px;
+             font-weight: 200;
+             margin-bottom: 10px;
+             opacity: 0;
+             /* ponemos esta opacidad que despues se va a modificar con la animacion */
+         }
+
+         .popup h4{
+            font-size: 26px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            opacity: 0;
+        }
+
+        .popup form .contenedor-inputs{
+            opacity: 0;
+        }
+        .popup form .contenedor-inputs input{
+            width: 100%;
+            margin-bottom: 20px;
+            height: 53px;
+            line-height: 52px;
+            font-size: 18px;
+            text-align: center;
+            border: 1px solid #BBBBBB;
+        }   
+        .popup form .btn-submit {
+            padding: 0px 20px;
+            height: 40px;
+            line-height: 40px;
+            border: none;
+            color: #fff;
+            background: #5E7DE3;
+            border-radius: 3px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .3s ease all;
+        }
+        .popup form .btn-submit:hover{
+            background: rgba(94, 125, 227, .9);
+        }
+
+        /* GALERIA EMERGENTE */
+
+        .overlayGalery{
+            background: rgba(0,0,0,.5);
+              backdrop-filter: blur(10px);
+              position: fixed;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              display: flex;
+              align-items: center;
+              justify-content: space-evenly;
+              visibility: hidden;
+        }
+
+        body.dark .overlayGalery{
+            color: #000;
+        }
+        .overlayGalery.activo{
+            visibility: visible;
+        }
+
+        .galeria-popup{
+            background: #f8f8f8;
+            box-shadow: 0px 0xp 5px 0px rgba(0, 0, 0, 0.3);
+            border-radius: 3px;
+            font-family: 'Montserrat', sans-serif;
+            padding: 20px;
+            text-align: center;
+            justify-content: center;
+            width: 800px;
+            max-width: 800px;
+            height: auto;
+            transition: .2s ease all;
+            display: flex;
+            flex-direction: row-reverse;
+            transform: scale(0.7);
+            opacity: 0; 
+            overflow: hidden;
+        }
+
+        .galeria-popup .cerrar{
+            font-size: 16px;
+            line-height: 16px;
+            display: block;
+            text-align: right;
+            color: #BBBBBB;
+            backdrop-filter: blur(10px);
+            transition: .3s ease all;
+            cursor: pointer;
+        }
+
+        .galeria-popup .cerrar:hover{
+            color: #000;
+        }
+
+        .emergentTexts{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .galeria-popup > img {
+            width: 600px;
+            max-width: 600px;
+            height: 300px;
+            max-height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+            overflow: hidden;
+        }
+        .coffeText{
+            user-select: none;
+        }
+        .overlayGalery h2{
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .overlayGalery .galeria-popup p{
+            font-size: 13px;
+            text-align: justify;
+            padding: 15px;
+            align-content: center;
+            vertical-align: top;
+            
+        }   
+        .overlayGalery .precios{
+            user-select: none;
+        }
+        .overlayGalery .precios h3{
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .table{
+            line-height: 30px;
+            font-weight: 300;
+            font-size: 14px;
+            margin: auto;
+            vertical-align: top;
+            border: collapse;
+            border-spacing: 30px 0px ;
+        }
+
+
+        .btn-abrir-popup{
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: 300;
+            border-radius: 10px;
+            transition: 1s ease-in all;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-abrir-popup:hover{
+            background:linear-gradient(315deg, #ffeaa7 0%, #000000 74%);
+        }
+        /* FORMULARIO EMERGENTE */
+        .popup.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .galeria-popup.activo{
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .popup.active h3{
+            animation: entradaTitulo .8s ease .5s forwards;
+            /* forwards - el elemento en este caso h3 se va a quedar con sus ultimas propiedades seleccionadas */
+            /* el segundo tiempo es el que se tarda en apareccer la animacion */
+        }
+
+        .popup.active h4{
+            animation: entradaSubtitulo .8s ease .5s forwards;
+        }
+        .popup.active .contenedor-inputs{
+            animation: entradaInputs 1s ease 1s forwards;
+        }
+        /* botonEmergente */
+        .go-top-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            z-index: -1; }
+          
+          .go-top-button {
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(315deg, #ffeaa7 0%, #000000 74%);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1; }
+            .go-top-button i {
+              position: absolute;
+              font-size: 17px;
+              top: 48%;
+              left: 50%;
+              transform: translate(-50%, -50%) scale(0);
+              color: #ffffff;
+              transition: 0.2s; }
+          
+          .show {
+            z-index: 10; }
+          
+          .show .go-top-button {
+            animation: popup 0.3s ease-in-out;
+            width: 66px;
+            height: 66px;
+            z-index: 11; }
+          
+          .show i {
+            transform: translate(-50%, -50%) scale(1); }
+
+/* ANIMACIONES  */
+@keyframes popup {
+    0% {
+      width: 0rem;
+      height: 0rem; }
+    50% {
+      width: 0rem;
+      height: 0rem; }
+    100% {
+      width: 66px;
+      height: 66px; } }
+        @keyframes entradaTitulo {
+            from{
+                transform: translateY(-25px);
+                opacity: 0;
+
+            }
+            to{
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes entradaSubtitulo {
+            from{
+                transform: translateY(25px);
+                opacity: 0;
+
+            }
+            to{
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes entradaInputs {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+
+
+
+/* MEDIAQUERY */
+@media screen and (max-width:900px){
+    .switch{
+        margin-left: 0px;
+    }
+    .icono-menu{
+        display: block;
+        color: #000;
+    }
+    .nav__links{
+        background-color: rgb(235, 235, 235);
+        box-shadow: 2px 0px 5px 2px rgba(66, 66, 66);
+        width: 400px;
+        height: 100vh;
+        position: absolute;
+        top:0;
+        right: 0;
+        transition: all .5s ease;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .nav__links a{
+        padding: 50px 0 20px 0px;
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+        color: #000;
+        font-size: 14px;
+        transition: all 1s ease;
+    }
+    
+    .activado{
+        transform: translate(600px);
+    }
+    .opacity{
+        background-color: rgba(0, 0, 0, 0, 0.5);
+        transition: all .5s ease;
+    }
+
+}
+@media screen and (max-width:750px){
+    .hero_logo {
+        height: 50px;
+        text-align: center;
+    }
+    .coffes{
+        justify-content: space-evenly;
+    }
+    .coffeCollaborator {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .coffeCollaborator {
+        width: 33%;
+    }
+    /* Galeria y Galeria Emergente */
+    .gallery__grid {
+        grid-template-areas: 
+                            
+                            "img2 img2 img2 img2"
+                            "img6 img6 img6 img6"
+                             "img3 img3 img4 img4"
+                             "img1 img1 img5 img5"
+                             "img7 img7 img7 img7";
+
+
+        /* con esto declaramos dos filas con 4 columnas cada fila */
+        grid-gap: 10px;
+        /* 10px de espacio entre filas y columnas */
+    }
+    .location__map a>img {
+        width: 550px;
+        border-radius: 10px;
+        cursor: pointer;
+        display: block;
+    }
+    .galeria-popup{
+        width: 550px;
+    }
+    .galeria-popup > img{
+        width: 550px;
+        height: 200px;
+        align-self: center;
+    }
+    .emergentTexts{
+        width: 300px;
+    }
+    .overlayGalery .galeria-popup p{
+        font-size: 12px;
+    }
+    
+    .table{
+        font-size: 12px;
+    }
+    /* FORMULARIO EMERGENTE */
+    .popup{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width:500px){
+
+    .coffeCollaborator {
+        width: 100%;
+    }
+    .coffeCollaborator>img{
+        align-self: center;
+    }
+    .galeria-popup{
+        width: 400px;
+    }
+    .galeria-popup > img{
+        width: 450px;
+        height: 200px;
+        align-self: center;
+    }
+    .gallery__grid {
+        grid-template-areas: 
+                            
+                            "img2 img2 img2 img2"
+                            "img6 img6 img6 img6"
+                             "img3 img3 img4 img4"
+                             "img1 img1 img5 img5"
+                             "img7 img7 img7 img7";
+
+
+        /* con esto declaramos dos filas con 4 columnas cada fila */
+        grid-gap: 10px;
+        /* 10px de espacio entre filas y columnas */
+    }
+    .emergentTexts{
+        width: 250px;
+    }
+    .overlayGalery .galeria-popup p{
+        font-size: 11px;
+    }
+    
+    .table{
+        border-spacing: 5px 0px ; 
+    }
+    /* FORMULARIO EMERGENTE */
+    .popup{
+        width: 400px;
+    }
+    .aboutUs__description.aparece{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px;
+    }
+    .about__img {
+        text-align: center;
+    }
+    .aboutUs__img {
+        max-width: 100%;
+    }
+    .aboutUs__story{
+        font-size: 13px;
+        padding: 10px;
+        text-align: justify;
+    }
+    /* footer */
+    footer .dreamCoffe{
+        font-size: 10px;
+    }
+    footer .phone{
+        font-size: 10px;
+    }
+    /* FALTA ACOMODAR GALERIA DE IMAGENES */
+    
+}
+@media screen and (max-width:400px){
+    .nav__links{
+        width: 200px;
+        height: 100vh;
+    }
+    .galeria-popup{
+        width: 350px;
+    }
+    .galeria-popup > img{
+        width: 150px;
+        height: 110px;
+        align-self: center;
+    }
+    .emergentTexts{
+        width: 200px;
+    }
+    .popup{
+        width: 350px;
+    }
+    .gallery__grid {
+        grid-template-areas: 
+                            
+                            "img2 img2 img2 img2"
+                            "img6 img6 img6 img6"
+                             "img3 img3 img4 img4"
+                             "img1 img1 img5 img5"
+                             "img7 img7 img7 img7";
+
+
+        /* con esto declaramos dos filas con 4 columnas cada fila */
+        grid-gap: 10px;
+        /* 10px de espacio entre filas y columnas */
+    }
+}
+
+@media screen and (max-width:300px){
+    .hero__texts h1:first-child {
+        font-size: 45px;
+    }
+    .member {
+        width: 50%;
+    }
+    .member div>img {
+        width: 100px;
+        height: 100px;
+    }
+    .galeria-popup{
+        width: 270px;
+    }
+    .galeria-popup > img{
+        width: 75px;
+        height: 100px;
+        align-self: center;
+    }
+    .emergentTexts{
+        width: 150px;
+        font-size: 10px;
+    }
+    .table{
+        border-spacing: 0px 0px ; 
+       font-size: 10px;
+}
+.popup{
+    width: 280px;
+}
+.popup h3{
+    font-size: 30px;
+}
+.popup h4{
+    font-size: 16px;
+}
+.popup form .contenedor-inputs input{
+    height: 43px;
+}
+.footer__logo a > img{
+    width: 30px;
+    height: 30px;
+}
+.phone > a{
+    font-size: 12px;
+}
+.dreamCoffe h2{
+    font-size: 11px;
+}
+}
