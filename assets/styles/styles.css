@@ -95,21 +95,107 @@
               body.dark nav a:hover {
                 color: #FEFEFE;
               }
+
+              .borrar-curso {
+                background-color: red;
+                border-radius: 50%;
+                text-decoration: none;
+                color: #fff;
+                font-weight: bold;
+            }
+
+            th,
+            td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #E1E1E1; }
+
               
+
             .nav__links {
                 transition: ease-in-out 0.5s;
                 /* esta transicion trabaja junto al js */
                /*  margin-left: -100px; */
-               
+               display: flex;
+               flex-wrap: nowrap;
+               padding: 20px 0px;
             }
             
             .nav__links a {
                 text-decoration: none;
-                margin: 0px 20px 0 20px;
+                margin: auto 20px;
+                padding: 0px 0px;
                 color: #535353;
                 transition: all ease-in-out .3s;
                 /* ease-in-out -  inicia rapido y luego se pinta lento */
             }
+          
+
+            /* ! Inicio carrito de compras */
+            .cartimg{
+                width: 20px;
+                height: 20px;
+            }
+            .submenu {
+                position: relative;
+            }
+            
+            .submenu #carrito{
+                display: none;
+            }
+            .submenu:hover #carrito{
+                display: block;
+                position: absolute;
+                right:0;
+                top:100%;
+                z-index: 1;
+                background-color: white;
+                border-radius: 10px;
+                padding: 20px;
+                min-height: 500px;
+                min-width: 400px;
+            }
+            
+            .u-full-width {
+            width: 100%;
+            box-sizing: border-box; 
+            
+             }
+            .u-max-full-width {
+                max-width: 100%;
+                box-sizing: border-box; }
+              .u-pull-right {
+                float: right; }
+              .u-pull-left {
+                float: left; }
+
+                hr {
+                    margin-top: 3rem;
+                    margin-bottom: 3.5rem;
+                    border-width: 0;
+                    border-top: 1px solid #E1E1E1; }
+                  
+            .button {
+                display: block;
+                height: 38px;
+                padding: 0 30px;
+                color: #555;
+                text-align: center;
+                font-size: 11px;
+                font-weight: 600;
+                line-height: 38px;
+                letter-spacing: .1rem;
+                text-transform: uppercase;
+                text-decoration: none;
+                white-space: nowrap;
+                background-color: transparent;
+                border-radius: 4px;
+                border: 1px solid #bbb;
+                cursor: pointer;
+                box-sizing: border-box; 
+                width: 87%;
+               
+            }
+        /* ! Fin carrito de compras */
             
             .nav__links a:hover {
                 color: var(--black-color);
@@ -436,6 +522,7 @@
                 font-size: 40px;
                 cursor: pointer;
             }
+
             /* aqui finaliza el efecto ligtbox */
             .aboutUs.container{
                 margin: 0px auto;
@@ -1152,6 +1239,39 @@
             border-spacing: 30px 0px ;
         }
 
+        .descriptionPrice{
+            line-height: 30px;
+            font-weight: 300;
+            font-size: 14px;
+            margin: auto;
+            vertical-align: top;
+            border: collapse;
+            border-spacing: 30px 0px ;
+        }
+        /* ! DARLE ESTILOS PERROS AQUI */
+        tr .eachPrice {
+            display: block;
+            width: 30px;
+            max-width: 30px;
+            height: 30px;
+            max-height: 30px;
+            margin: 10px auto 0px;
+            border-radius: 100%;
+            font-size: 20px;
+            text-decoration: none;
+            background-color: #000;
+            transition: 0.4s ease-in all;
+            color: #fff;
+
+        }
+        .fa-solid.fa-circle-plus{
+            color: #fff;
+        }
+
+
+        tr .eachPrice:hover{
+            background-color: #757b88;
+        }
 
         .btn-abrir-popup{
             background: #000;
@@ -1167,6 +1287,9 @@
         .btn-abrir-popup:hover{
             background:linear-gradient(315deg, #ffeaa7 0%, #000000 74%);
         }
+       
+
+        /* fin galeria emergente */
         /* FORMULARIO EMERGENTE */
         .popup.active {
             opacity: 1;
@@ -1231,6 +1354,9 @@
           .show i {
             transform: translate(-50%, -50%) scale(1); }
 
+        /* ?fin boton emergente */
+
+        
 /* ANIMACIONES  */
 @keyframes popup {
     0% {

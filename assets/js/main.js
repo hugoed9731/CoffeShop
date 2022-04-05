@@ -54,7 +54,6 @@ let sliderIndividual = document.querySelectorAll(".member"); // va a obtener tod
 let contador = 1;
 let width = sliderIndividual[0].clientWidth;//el primer elemento de slider individual, 
 // .clientwidth el primer elemento del contenido slider quiero que tomes su width
-console.log(sliderIndividual);
 let intervalo = 3000; // el intervalo, para cuando se cambia de pantalla
 
 window.addEventListener("resize", function(){
@@ -102,7 +101,6 @@ const iconoMenu = document.querySelector('#open'),
 /* CAMBIO DE TEMA */
 
 const btnSwitch = document.querySelector('#switch');
-console.log("btnSwitch");
 
 btnSwitch.addEventListener('click', () => {
     document.body.classList.toggle('dark');
